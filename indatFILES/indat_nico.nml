@@ -1,0 +1,99 @@
+&input_options
+opt_ng_cont=t
+opt_ait_cont=f
+opt_alo_cont=1
+opt_angint_method=0
+opt_grey=2
+opt_opac=1
+opt_epsc=0
+opt_gridxyz=1
+model_dir = 'inputFILES'
+opal_dir = './opal_tables'
+/
+
+&input_model
+input_mod=2
+yhe = 0.98d0
+hei = 2.d0
+/
+
+&input_cont
+eps_cont =0.d0
+kcont = 1.d0
+/
+
+&input_units
+unit_length = 1.d0
+unit_density = 5.d-8
+unit_velocity = 1.d8
+unit_temperature = 1.d0
+/
+unit_length in rsun
+for 2d-simulations: unit_density = 2.5d-8
+
+&dimensions_3dz
+nz=101
+zmin = 1.d0
+zmax = 6.d0
+/
+
+&dimensions_3dx
+nx=21
+xmin = -0.25d0
+xmax = 0.25d0
+/
+
+&dimensions_3dy
+ny=21
+ymin = -0.25d0
+ymax = 0.25d0
+/
+
+&dimensions_freq
+nnue=1
+xnue0=1.93798d15
+/
+
+&dimensions_angles
+ntheta=1
+/
+
+&input_diff1d
+opt_method=4
+/
+
+&input_sc1d
+opt_method=5
+/
+
+&input_sc2d
+opt_method=5
+/
+
+&input_sc3d
+opt_method= 15
+/
+
+&input_bcondition3d
+opt_bcondition=0
+xic1_nue = 1.35d17
+xic2_nue = -6.5395257d15
+/
+
+&benchmark
+benchmark_mod = 0
+theta = 85.
+phi = 315. /
+
+&input_usr
+opt_read_h5 = f
+fname_model='models/nico_wr3d/WR_3D_alpha_LTE_0013.dat'
+max_refinement=4                                         ! refinement level of the hydro grid
+nd = 1024, 128, 128                                         ! resolution of the output grid 
+opt_bvel = 0
+/
+fname_model='models/nico_wr2d/WR_2D_alpha_0.66_0001.h5'
+fname_model='models/nico_wr2d/WR_2D_alpha_0.66_0014.h5'
+
+&namelist_dum
+/

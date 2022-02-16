@@ -1,0 +1,40 @@
+&input_options
+input_file1 = './outputFILES/output_model00.h5'
+input_file2 = './inputFILES/model3d.h5'
+output_file = './outputFILES/surfb_model00.h5'
+input_mod = 2
+nxobs_surfb = 10
+/
+
+&input_units
+unit_length = 1.d0
+unit_density = 2.5d-8
+unit_velocity = 1.d8
+unit_temperature = 1.d0
+vth_fiducial = 1.d2
+/
+
+&input_model
+yhe = 0.98d0
+hei = 2.d0
+vmicro = 10.d0
+trad = 258390.7d0
+/
+trad = 40.d3
+
+&input_cont
+opt_opac = 1
+opt_scont = 1
+eps_cont =0.d0
+kcont = 1.d0
+/
+
+&input_line
+opt_sline = 1
+eps_line =0.d0
+kline = 1.d13
+iline = 11
+/
+iline=1: halpha
+iline=2: hbeta
+iline=10: civ resonance line
