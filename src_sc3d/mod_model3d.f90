@@ -63,7 +63,7 @@ contains
           call read_mod3d_amrvac2d(verbose=ver)  !take directly from within amrvac simulations
        case default
           stop 'error in setup_mod3d: read_mod3d method not specified'
-    end select                 
+    end select
     !
     if(xmin.lt.minval(x_modext)) stop 'error in setup_mod3d: input xmin smaller than min(x_modext)'
     if(xmax.gt.maxval(x_modext)) stop 'error in setup_mod3d: input xmax greater than max(x_modext)'

@@ -1,3 +1,7 @@
+import sys
+sys.path.append('./levpy/')
+sys.path.append('./levpy/version_sc3d')
+
 import matplotlib.pyplot as plt
 import numpy as np
 from const_cgs import *
@@ -95,10 +99,9 @@ def main(fname='../outputFILES/surfb_model00.h5', oname1='./ps_files/fluxem', on
    for i in np.arange(0,ncol*nrow):
       if i < nxobs_surfb:
          icont2d_surfb = trad(xnue0, icont3d_surfb[:,:][i])#icont3d_surfb[:,:][i]
-         iem2d_surfb = trad(xnue0, iem3d_surfb[:,:][i])#/icont2d_surfb
+         iem2d_surfb = trad(xnue0, iem3d_surfb[:,:][i])/icont2d_surfb
          iemi2d_surfb = iemi3d_surfb[:,:][i]/icont2d_surfb
          iabs2d_surfb = iabs3d_surfb[:,:][i]/icont2d_surfb
-
         
          icol = i%ncol
          irow = np.int((i - icol)/ncol)
@@ -146,7 +149,7 @@ def main(fname='../outputFILES/surfb_model00.h5', oname1='./ps_files/fluxem', on
 #   exit()
 
 #   clevels, ticks = get_clevels(clim=[np.min(icont2d_surfb),np.max(icont2d_surfb)])
-   clevels, ticks = get_clevels(clim=[120.,165.])
+   clevels, ticks = get_clevels(clim=[60.,120.])
 #   titlestr=r'$v [km/s]=${xobs:.2f}'.format(xobs=xobs_surfb[i]*100.)
 #   ax3[0].set_title(titlestr)
    ax3[0].set_xlabel(r'$x_p$')
@@ -170,7 +173,7 @@ def main(fname='../outputFILES/surfb_model00.h5', oname1='./ps_files/fluxem', on
 
 
 #   clevels, ticks = get_clevels(clim=[0.,1.000001])
-   clevels, ticks = get_clevels(clim=[120.,165.])
+   clevels, ticks = get_clevels(clim=[60.,120.])
 #   titlestr=r'$x[v_t^\ast]=${xobs:.2f}'.format(xobs=xobs_surfb[i])
    titlestr=r'$v [km/s]=${xobs:.2f}'.format(xobs=xobs_surfb[i]*100.)
    ax3[1].set_title(titlestr)

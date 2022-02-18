@@ -13,8 +13,7 @@ use dime_modext, only: nx, ny, nz
 use model3d, only: x_modext3d, y_modext3d, z_modext3d, rho_modext3d, velx_modext3d, &
                    vely_modext3d, velz_modext3d, tgas_modext3d, trad_modext3d
 use params_input, only: xmin, xmax, ymin, ymax, zmin, zmax, &
-                        vmin, vmin_cgs, vmax, vmax_cgs, xmloss, xmloss_cgs, &
-                        rstar, rstar_cgs, tmin, teff, beta, unit_length, unit_density, unit_velocity
+                        unit_length, unit_density, unit_velocity
 use mod_directories, only: indat_file
 !
 implicit none
@@ -23,6 +22,7 @@ implicit none
 integer(i4b) :: i, j, k, err
 real(dp) :: bconst, zshift
 real(dp) :: velr, rad
+real(dp) :: rstar, rstar_cgs, tmin, teff, beta, vmin, vmin_cgs, vmax, vmax_cgs, xmloss, xmloss_cgs
 !
 ! ... local characters
 !
@@ -146,9 +146,7 @@ use fund_const
 use dime_modext, only: nx, ny, nz
 use model3d, only: x_modext3d, y_modext3d, z_modext3d, rho_modext3d, velx_modext3d, &
                    vely_modext3d, velz_modext3d, tgas_modext3d, trad_modext3d
-use params_input, only: xmin, xmax, ymin, ymax, zmin, zmax, &
-                        vmin, vmin_cgs, vmax, vmax_cgs, xmloss, xmloss_cgs, &
-                        rstar, rstar_cgs, tmin, teff, beta
+use params_input, only: xmin, xmax, ymin, ymax, zmin, zmax
 use mod_directories, only: indat_file
 use hdf5
 !
@@ -333,9 +331,7 @@ use fund_const
 use dime_modext, only: nx, ny, nz
 use model3d, only: x_modext3d, y_modext3d, z_modext3d, rho_modext3d, velx_modext3d, &
                    vely_modext3d, velz_modext3d, tgas_modext3d, trad_modext3d
-use params_input, only: xmin, xmax, ymin, ymax, zmin, zmax, &
-                        vmin_cgs, vmax, vmax_cgs, xmloss, xmloss_cgs, &
-                        rstar, rstar_cgs, tmin, teff, beta, unit_length, unit_velocity, unit_density
+use params_input, only: xmin, xmax, ymin, ymax, zmin, zmax, unit_length, unit_velocity, unit_density
 use mod_directories, only: indat_file
 use mod_amrvac_reader
 use hdf5
@@ -356,6 +352,7 @@ character(len=500)  :: fname_model
 ! ... namelists
 logical :: opt_read_h5
 integer(i4b) :: opt_bvel, max_refinement
+real(dp) :: beta
 integer(i4b), dimension(:), allocatable :: nd
 real(dp), dimension(:), allocatable :: stretching
 namelist / input_usr / fname_model, opt_bvel, max_refinement, nd, opt_read_h5

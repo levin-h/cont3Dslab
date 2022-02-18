@@ -54,7 +54,7 @@ integer(i4b) :: opt_opac
 
 integer(i4b) :: opt_epsc
 !opt_epsc = 0   eps_cont3d = eps_cont = constant
-!opt_opac = 1   eps_cont3d = (chi_tot-chi_thomson)/chi_tot
+!opt_epsc = 1   eps_cont3d = (chi_tot-chi_thomson)/chi_tot
 !
 !
 

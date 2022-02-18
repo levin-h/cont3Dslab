@@ -1,3 +1,7 @@
+import sys
+sys.path.append('./levpy/')
+sys.path.append('./levpy/version_sc3d')
+
 import matplotlib.pyplot as plt
 import numpy as np
 from const_cgs import *
@@ -458,7 +462,6 @@ def main(dir='../outputFILES/sc3d', oname3d='./ps_files/sc3d', ps=[0.,0.,0.], pe
 #############################################################################
    
 dir='../outputFILES/sc3d'
-dir='/lhome/levin/Postdoc/hydro_sims/levin_wr2d/outputFILES/sc3d'
 windx = 1
 main(dir=dir,windx=windx,  ps=[0.,0.,1.], pe=[0.,0.,6.], )
 

@@ -110,13 +110,13 @@ real(dp) :: xmin, xmax, ymin, ymax, zmin, zmax
 real(dp) :: unit_length, unit_density, unit_velocity, unit_temperature
 !
 !stellar surface and atmospheric properties
-real(dp) :: teff, trad, tmin, rstar, yhe, hei
-real(dp) :: rstar_cgs
+!real(dp) :: teff, trad, tmin, rstar, yhe, hei
+!real(dp) :: rstar_cgs
 !
 !
 !for beta velocity law
-real(dp) :: vmin, vmax, beta, xmloss
-real(dp) :: vmin_cgs, vmax_cgs, xmloss_cgs
+!real(dp) :: vmin, vmax, beta, xmloss
+!real(dp) :: vmin_cgs, vmax_cgs, xmloss_cgs
 !
 !
 !

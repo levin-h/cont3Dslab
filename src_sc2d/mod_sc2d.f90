@@ -131,7 +131,7 @@ integer(i4b), dimension(:), allocatable :: alocont_colindx, alocont_rowindx, alo
 !for paralleliztion
 real(dp), dimension(:,:,:), allocatable :: alocont_nn2d_tmp
 real(dp), dimension(:,:), allocatable :: mint2d_tmp, normalization2d_tmp
-!$omp threadprivate(int2d, alocont_o_nn2d, alocont_nn2d_tmp, mint2d_tmp)
+!$omp threadprivate(int2d, alocont_o_nn2d, alocont_nn2d_tmp, mint2d_tmp, normalization2d_tmp)
 !
 end module dime2d
 !

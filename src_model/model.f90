@@ -96,7 +96,7 @@ subroutine read_input
 use prog_type
 use mod_directories, only: indat_file, model_dir
 use fund_const, only: rsu, yr, xmsu  , pi
-use params_input, only: input_mod, teff, trad, rstar, yhe, hei, rstar_cgs, unit_velocity, unit_density, unit_length, unit_temperature
+use params_input, only: input_mod, unit_velocity, unit_density, unit_length, unit_temperature
 !
 implicit none
 !
@@ -113,8 +113,8 @@ logical :: verbose
 ! ... local functions
 !
 ! ... namelist
-namelist / input_options / opt_ng_cont, opt_ait_cont, opt_alo_cont, opt_angint_method, model_dir, opt_grey, opt_opac, opt_epsc, opt_gridxyz, opal_dir, verbose
-namelist / input_model / rstar, teff, trad, yhe, hei, input_mod
+namelist / input_options / model_dir, verbose
+namelist / input_model / input_mod
 namelist / input_units / unit_velocity, unit_density, unit_length, unit_temperature
 !
 !-----------------------------------------------------------------------
@@ -136,7 +136,6 @@ open(1, file=trim(indat_file), status='old', form='formatted')
 !read model parameters
    rewind 1
    read(1, nml=input_model)
-   rstar_cgs=rstar*rsu
 !
 !-----------------------read model units--------------------------------
 !
@@ -165,14 +164,6 @@ write(*,*) '-------------------------summary of input parameter-----------------
 write(*,*)
 !
 write(*,'(a20, i20)') 'input model', input_mod
-write(*,*)
-write(*,*) 'GENERAL INPUT'
-write(*,'(a20, 2es20.8)') 'r_star [cm], [r_sun]', rstar_cgs, rstar
-write(*,'(a20, es20.8)') 't_eff [K]', teff
-write(*,'(a20, es20.8)') 't_rad [K]', trad
-write(*,'(a20, es20.8)') 'yhe', yhe
-write(*,'(a20, es20.8)') 'hei', hei
-write(*,'(a20, es20.8)') 'hei', hei
 write(*,*)
 write(*,*) 'units'
 write(*,'(a20, es20.8)') 'unit_length [r_sun]', unit_length

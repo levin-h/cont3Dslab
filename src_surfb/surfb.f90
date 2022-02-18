@@ -305,7 +305,7 @@ do i=1, nxp
 enddo
 !
 !
-if(abs(sumex-sum)/sumex.gt.1.d-13) then
+if(abs(sumex-sum)/sumex.gt.1.d-10) then
    write(*,*) '--------------error in xp-yp-integration---------'
    write(*,'(6a30)') 'integral(num)', 'integral(num), half step', 'integral(exact)', 'abs error_1(num)', 'abs error_2(num', 'error(exact)'
    write(*,'(6(e30.8))') sum, sum1, sumex, sum_err, (sum-sum1)/6.d0, (sumex-sum)

@@ -275,7 +275,7 @@ contains
     if(ver) write(*,*) 'input opt_bcondition: ', opt_bcondition
     if(ver) write(*,*) '   0 - I_core(nue) = xic1(nue) - mu*xic2(nue)'
     if(ver) write(*,*) '   1 - set xic1= (1-eps)*B(Trad) + eps*B(Tgas), xic2=1/chi * dB/dz'
-    if(ver) write(*,*) '   2 - read from user specified routine'    
+    if(ver) write(*,*) '   2 - read from user specified routine'
     !
   end subroutine read_input
   !

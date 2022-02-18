@@ -150,7 +150,7 @@ do i=1, itmaxc
 !
 !calculate error
    call calc_err(nz, scont1d_old, scont1d, eps_max)
-   write(*,*) i, eps_max
+   write(*,*) 'iteration', i, 'max relative error', eps_max
    epsmaxc_arr(i)=eps_max
    nconv=i
    if(eps_max.lt.devmaxc) exit
@@ -160,12 +160,14 @@ enddo
 !-----------------------------------------------------------------------
 !
 open(1, file='outputFILES/diff1d/output.dat', form='formatted')
+   write(1, '(a5, 6a20)') 'i', 'z', 'opac', 'tau', 'scont', 'scont_diff', 'bnue'
    do i=1, nz
       write(1,'(i5, 6es20.8)') i, z(i), opac1d(i), tau1d(i), scont1d(i), scont1d_diff(i), bnue1d(i)
    enddo
 close(1)
 !
 open(1, file='outputFILES/diff1d/convergence.dat', form='formatted')
+   write(1,'(a5,a20)') 'i', 'rel error'
    do i=1, nconv
       write(1,'(i5, es20.8)') i, epsmaxc_arr(i)
    enddo
@@ -193,7 +195,6 @@ implicit none
 !
 ! ... local scalars
 real(dp) :: mstar
-integer(i4b) :: opt_angint_method
 !
 ! ... local characters
 !
@@ -205,7 +206,7 @@ namelist / input_model / teff, trad, tmin, xmloss, vmin, vmax, beta, rstar, xnue
 namelist / input_cont / eps_cont, kcont
 namelist / dimensions_freq / nnue
 namelist / dimensions_3dz / nz, zmin, zmax
-namelist / input_options / opt_ng_cont, opt_ait_cont, opt_alo_cont, opt_angint_method
+namelist / input_options / opt_ng_cont, opt_ait_cont, opt_alo_cont
 namelist / input_diff1d / opt_method
 !
 !-----------------------------------------------------------------------
@@ -507,7 +508,7 @@ do i=nz-1, 2, -1
    tau=tau+dtau
    indx_therm1d=indx_therm1d+1
 !
-   write(*,'(8es20.8,3l5)') z(i), tau, opac1, opac2, r1, r2, dtau, thdepth
+!   write(*,'(8es20.8,3l5)') z(i), tau, opac1, opac2, r1, r2, dtau, thdepth
    if(tau.gt.thdepth) exit
 enddo
 !
