@@ -1,0 +1,48 @@
+&input_options
+opt_ng_cont=t
+opt_ait_cont=f
+opt_alo_cont=1
+opt_angint_method=0
+/
+
+&input_model
+rstar = 20.
+teff = 40.d3
+trad = 40.d3
+tmin = 0.8d0
+xmloss = 1.d-6
+vmin = 10.
+vmax = 2000.
+beta = 1.
+yhe = 0.1d0
+hei = 2.d0
+xnue0=1.93798d15
+/
+
+&input_cont
+eps_cont = 1.d-1
+kcont = 1.d-10
+/
+
+&dimensions_3dz
+nz=101
+zmin = 1.d0
+zmax = 6.d0
+/
+
+&dimensions_angles
+ntheta = 1
+/
+
+&dimensions_freq
+nnue=1
+/
+
+&input_sc1d
+opt_method=0
+/
+
+&namelist_dum
+/
+
+test

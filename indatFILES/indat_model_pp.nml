@@ -1,0 +1,39 @@
+&input_options
+model_dir = 'inputFILES'
+verbose = t
+/
+
+&input_model
+input_mod=0
+/
+
+&input_units
+unit_length = 20.d0
+unit_density = 5.d-8
+unit_velocity = 1.d8
+unit_temperature = 1.d0
+/
+unit_length in rsun
+
+&input_usr
+rstar = 20.
+teff = 40.d3
+tmin = 0.8d0
+xmloss = 1.d-6
+vmin = 10.
+vmax = 2000.
+beta = 1.
+xmin = -0.25
+xmax = 0.25
+ymin = -0.25
+ymax = 0.25
+zmin = 1.
+zmax = 10.
+nx = 41
+ny = 41
+nz = 101
+/
+
+
+&namelist_dum
+/
