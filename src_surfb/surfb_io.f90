@@ -274,11 +274,11 @@ do k=1, nz
             case(0)
                opac3d(i,j,k) = zero
             case(1)
-               !in 1/unit_length               
-               opac3d(i,j,k) = opac_opal(kcont, yhe, hei, log10(rho3d(i,j,k)),log10(tgas3d(i,j,k)), nrho_opal, ntemp_opal, rho_opal, temp_opal, kappa_opal)*unit_length
-            case(2)
 !               opac3d(i,j,k) = opac_thomson(yhe,hei,rho3d(i,j,k),kcont) !in cgs
                opac3d(i,j,k) = opac_thomson(yhe,hei,rho3d(i,j,k),kcont)*unit_length !in 1/unit_length
+            case(2)
+               !in 1/unit_length               
+               opac3d(i,j,k) = opac_opal(kcont, yhe, hei, log10(rho3d(i,j,k)),log10(tgas3d(i,j,k)), nrho_opal, ntemp_opal, rho_opal, temp_opal, kappa_opal)*unit_length
             case default
                stop 'error in read_model3d: opt_opac not specified'
          end select

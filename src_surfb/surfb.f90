@@ -397,9 +397,9 @@ real(dp) :: acoeff, bcoeff, ccoeff, dcoeff, ecoeff, fcoeff, gcoeff, hcoeff
 real(dp) :: velx, vely, velz, dum_vel2, dum_vel1, dum_delv
 !!
 !! ... local arrays
-real(dp), dimension(nz_max) :: zdum_ray, veldum_ray, vthdum_ray, &
+real(dp), dimension(:), allocatable :: zdum_ray, veldum_ray, vthdum_ray, &
                                opacdum_ray, opalbardum_ray, scontdum_ray, slinedum_ray, tempdum_ray
-real(dp), dimension(nz_max) :: zdum2_ray, veldum2_ray, vthdum2_ray, opacdum2_ray, opalbardum2_ray, scontdum2_ray, &
+real(dp), dimension(:), allocatable :: zdum2_ray, veldum2_ray, vthdum2_ray, opacdum2_ray, opalbardum2_ray, scontdum2_ray, &
                                slinedum2_ray, tempdum2_ray
 !!
 !! ... local logicals
@@ -410,6 +410,14 @@ real(dp) :: vthermal
 !real(dp) :: calc_vmicro
 !logical :: boundary
 !!
+
+allocate(zdum_ray(nz_max), veldum_ray(nz_max), vthdum_ray(nz_max), &
+     opacdum_ray(nz_max), opalbardum_ray(nz_max), &
+     scontdum_ray(nz_max), slinedum_ray(nz_max), tempdum_ray(nz_max))
+allocate(zdum2_ray(nz_max), veldum2_ray(nz_max), vthdum2_ray(nz_max), &
+     opacdum2_ray(nz_max), opalbardum2_ray(nz_max), scontdum2_ray(nz_max), &
+     slinedum2_ray(nz_max), tempdum2_ray(nz_max))
+
 !!
 iz=0
 !

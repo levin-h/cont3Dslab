@@ -692,7 +692,7 @@ if(.not.linfo) then
       indx_y2=indx_y2-beta
       indx_z1=indx_z1-gamma
       indx_z2=indx_z2-gamma
-      call info_region(xarr(indx_x1), yarr(indx_y1), zarr(indx_z1), rmin, rmax, linfo, linfo2)
+      call info_region(xarr(indx_x1), yarr(indx_y1), zarr(indx_z1), rmin, rmax, linfo, linfo2, linfo_boundary)
       if(linfo) exit
    enddo
    if(.not.linfo) stop 'error in get_xyz_indx: linfo_phot eq false => extrapolation over more than 10 grid points'

@@ -1,5 +1,5 @@
 &input_options
-input_file1 = './outputFILES/sc3d/output_sc3d.h5'
+input_file1 = ''
 input_file2 = './inputFILES/model3d.h5'
 output_file = './outputFILES/surfb_model00.h5'
 input_mod = 2
