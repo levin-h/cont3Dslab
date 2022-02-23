@@ -284,6 +284,10 @@ contains
     !n_x=fdum_arr
     !write(*,*) 'NOTE*************: UPDATE CALCNODES_OMEGA0 FOR FDUM_ARR'
     !
+    write(*,*) n_x
+    write(*,*) n_y
+    write(*,*) n_z
+    stop 'go on in calcnodes_omega0'
     !
   end subroutine calcnodes_omega0
   !

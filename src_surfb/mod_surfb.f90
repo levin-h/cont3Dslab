@@ -18,8 +18,8 @@ integer(i4b) :: input_mod
 !
 integer(i4b) :: opt_opac
 !opt_opac=0    continuum opacity = 0
-!opt_opac=1    OPAL tables
-!opt_opac=2    continuum opacity = thomson-opacity
+!opt_opac=1    continuum opacity = thomson-opacity
+!opt_opac=2    OPAL tables
 
 integer(i4b) :: opt_scont
 !opt_scont=0    continuum source function = 0
